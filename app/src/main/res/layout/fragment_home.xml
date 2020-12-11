@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+    android:background="@color/colorGrey01">
+
+    <EditText
+        android:id="@+id/edtHomeSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="다양한 밀키트를 검색해보세요!"
+        android:textColorHint="@color/colorGrey06"
+        android:textSize="16sp"
+        android:paddingVertical="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        android:background="@drawable/white_background_round7" />
+
+    <TextView
+        android:id="@+id/txtHomeTodayPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘의 특가"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/edtHomeSearch" />
+
+    <TextView
+        android:id="@+id/txtHomeTodayPriceExplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘만 이 가격! 신선한 재료를 놓치지 마세요"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey03"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/txtHomeTodayPrice" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpTodayPrice"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/txtHomeTodayPriceExplain"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_marginBottom="26dp"
+        android:background="@android:color/transparent"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabPaddingStart="8dp"
+        app:tabPaddingEnd="8dp"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        app:layout_constraintTop_toBottomOf="@id/vpTodayPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtHomeTodayPockit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘의 포킷"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    <TextView
+        android:id="@+id/txtHomeTodayPockitExplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="박경선님, 오늘은 이런 상품 어떠세요?"
+        android:textColor="@color/colorGrey03"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/txtHomeTodayPockit" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTodayPockit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/txtHomeTodayPockitExplain"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="36dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="36dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
