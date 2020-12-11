@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey01"
+    tools:context=".ui.CategoryFragment">
+
+    <ImageView
+        android:id="@+id/cart"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="33dp"
+        android:src="@drawable/shopping_cart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_bar"
+        style="@style/Widget.CategorySearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
+        android:background="@color/colorWhite"
+        app:boxCornerRadiusBottomEnd="3.5dp"
+        app:boxCornerRadiusBottomStart="3.5dp"
+        app:boxCornerRadiusTopEnd="3.5dp"
+        app:boxCornerRadiusTopStart="3.5dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_search"
+        app:endIconTint="@color/teal_blue"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="@id/cart"
+        app:layout_constraintEnd_toStartOf="@id/filter"
+        app:layout_constraintStart_toEndOf="@id/cart"
+        app:layout_constraintTop_toTopOf="@id/cart">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:paddingTop="14dp"
+            android:paddingBottom="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintBottom_toBottomOf="@id/search_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_bar" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_marginTop="18dp"
+        android:id="@+id/tabs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/teal_blue"
+        app:tabTextAppearance="@style/TextAppearance.CategoryTab"
+        app:tabTextColor="#535353"
+        app:tabPaddingBottom="-1dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="백반" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="반찬" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="야식" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="과일" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="간편식" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="일식" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="양식" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="기타" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
