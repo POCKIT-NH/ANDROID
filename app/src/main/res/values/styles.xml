@@ -7,4 +7,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextAppearance.CategoryTab" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
+    <style name="Widget.CategorySearch" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="fontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">39sp</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="boxStrokeColor">@color/border_category_search</item>
+    </style>
+
 </resources>
