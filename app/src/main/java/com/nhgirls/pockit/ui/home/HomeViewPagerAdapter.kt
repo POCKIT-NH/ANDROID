@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 
-class HomeViewPagerAdapter(val data: List<>) : PagerAdapter() {
+class HomeViewPagerAdapter() : PagerAdapter() {
     override fun isViewFromObject(view: View, obj: Any): Boolean {
         return view == obj as View
     }
