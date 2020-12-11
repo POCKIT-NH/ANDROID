@@ -54,7 +54,7 @@
             android:id="@+id/like"
             android:layout_width="13dp"
             android:layout_height="19dp"
-            android:background="@drawable/sl_love"
+            android:background="@drawable/sl_like"
             android:buttonTint="@android:color/transparent"
             android:clickable="false"
             app:layout_constraintBottom_toBottomOf="@id/price"
