@@ -71,7 +71,8 @@
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/teal_blue"
         app:tabTextAppearance="@style/TextAppearance.CategoryTab"
-        app:tabTextColor="#535353">
+        app:tabTextColor="#535353"
+        app:tabPaddingBottom="-1dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -116,6 +117,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
