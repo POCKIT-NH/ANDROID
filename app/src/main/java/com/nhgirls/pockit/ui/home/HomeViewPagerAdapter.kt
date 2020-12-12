@@ -10,7 +10,6 @@ class HomeViewPagerAdapter() : PagerAdapter() {
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
-        super.destroyItem(container, position, obj)
         container.removeView(obj as View)
     }
 
