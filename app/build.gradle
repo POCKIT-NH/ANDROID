@@ -66,4 +66,6 @@ dependencies {
     //서버 통신 로그
     implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
 
+    // fragment ktx
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
 }
