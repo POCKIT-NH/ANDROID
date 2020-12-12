@@ -5,4 +5,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="price">%,d원</string>
     <string name="suffix_like">%,d명이 찜했어요</string>
+    <string name="korean_meal_title">백반</string>
+    <string name="korean_side_title">반찬</string>
+    <string name="convenient_food_title">간편식</string>
+    <string name="night_food_title">야식</string>
+    <string name="western_food_title">서양식</string>
+    <string name="japanese_food_title">일식</string>
+    <string name="fruit_title">과일</string>
+    <string name="etc_title">기타</string>
 </resources>
