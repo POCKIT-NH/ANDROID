@@ -1,6 +1,5 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.categorydetail
 
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

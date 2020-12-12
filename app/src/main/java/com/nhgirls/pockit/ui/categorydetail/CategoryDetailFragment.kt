@@ -1,4 +1,4 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.categorydetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.data.DummyContainer
+import com.nhgirls.pockit.ui.MealkititemDecoration
 import com.nhgirls.pockit.utils.dpToPx
 import kotlinx.android.synthetic.main.fragment_category_detail.view.*
 
