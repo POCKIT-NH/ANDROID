@@ -5,56 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.nhgirls.pockit.R
+import com.nhgirls.pockit.data.DummyContainer
+import com.nhgirls.pockit.utils.dpToPx
+import kotlinx.android.synthetic.main.fragment_category_detail.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CategoryDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CategoryDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val viewModel: CategoryDetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category_detail, container, false)
+        val view = inflater.inflate(R.layout.fragment_category_detail, container, false)
+        val mealkitAdapter = MealkitAdapter(MealkitAdapter.OnClickListener {
+            // todo 리사이클러뷰 아이템 클릭시 클릭 이벤트 처리하기
+        })
+        view.mealkit_list.adapter = mealkitAdapter
+        view.mealkit_list.addItemDecoration(
+            MealkititemDecoration(
+                MEALKIT_LIST_SPANCOUNT,
+                MEALKIT_LIST_SPACING
+            )
+        )
+
+        subscribeUi(mealkitAdapter)
+        mealkitAdapter.submitList(DummyContainer.getDummyMealKits())
+        return view
+    }
+
+    private fun subscribeUi(mealkitAdapter: MealkitAdapter) {
+        viewModel.mealKits.observe(viewLifecycleOwner, Observer {
+            mealkitAdapter.submitList(it)
+        })
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CategoryDetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CategoryDetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        private const val MEALKIT_LIST_SPANCOUNT = 2
+        private val MEALKIT_LIST_SPACING = 14.dpToPx()
     }
 }
