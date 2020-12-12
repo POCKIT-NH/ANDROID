@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nhgirls.pockit.data.Mealkit
 
-private const val FIRST_MEAL_INDEX = 1
+private const val FIRST_MEAL_INDEX = 0
 private const val FIRST_MEAL_VIEW_TYPE = 1
 private const val THE_REST_MEAL_VIEW_TYPE = 2
 
@@ -46,7 +46,7 @@ class MealkitAdapter(private val onClickListener: OnClickListener) :
         }
     }
 
-    class OnClickListener(private val clickListener: (view: View, artist: Mealkit) -> Unit) {
-        fun onClick(view: View, artist: Mealkit) = clickListener(view, artist)
+    class OnClickListener(private val clickListener: (artist: Mealkit) -> Unit) {
+        fun onClick(artist: Mealkit) = clickListener(artist)
     }
 }
