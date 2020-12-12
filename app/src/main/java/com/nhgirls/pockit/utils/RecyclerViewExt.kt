@@ -1,4 +1,4 @@
-package com.pockit.android.util
+package com.nhgirls.pockit.utils
 
 import android.view.LayoutInflater
 import android.view.View
