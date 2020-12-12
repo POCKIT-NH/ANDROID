@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="460dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:background="@drawable/white_background_round10">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+
+        <TextView
+            android:id="@+id/txtDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="단호박 크림 파스타"
+            android:textColor="@color/colorBlack"
+            android:textFontWeight="700"
+            android:textSize="23sp"
+            android:layout_marginTop="46dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_like_fill"
+            android:layout_marginTop="13dp"
+            app:layout_constraintTop_toBottomOf="@id/txtDetailTitle"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"/>
+
+        <TextView
+            android:id="@+id/txtAvg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:textColor="@color/colorPrimary"
+            android:textFontWeight="600"
+            android:textSize="13sp"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintStart_toEndOf="@+id/imgHeart"
+            app:layout_constraintTop_toTopOf="@+id/imgHeart" />
+
+        <TextView
+            android:id="@+id/txtDetailPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12,300원"
+            android:textColor="@color/colorGrey05"
+            android:textFontWeight="600"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/txtAvg" />
+
+        <TextView
+            android:id="@+id/txtDetailMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="단호박, 유기농 파스타, 양파, 당근, 브로콜리"
+            android:textColor="@color/colorGrey05"
+            android:textSize="12sp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/imgHeart" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/colorGrey05"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/txtDetailMaterial"/>
+
+        <ImageView
+            android:id="@+id/imgCook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_cook_time"
+            android:layout_marginTop="23dp"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"/>
+
+        <TextView
+            android:id="@+id/txtDetailCook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="조리시간 "
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:layout_marginLeft="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCook"
+            app:layout_constraintStart_toEndOf="@id/imgCook"
+            app:layout_constraintTop_toTopOf="@+id/imgCook" />
+
+        <TextView
+            android:id="@+id/txtDetailCookTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5분"
+            android:textColor="@color/colorBlack"
+            android:textFontWeight="700"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDetailCook"
+            app:layout_constraintStart_toEndOf="@id/txtDetailCook"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailCook" />
+
+        <ImageView
+            android:id="@+id/imgLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCook"
+            app:layout_constraintStart_toEndOf="@+id/txtDetailCookTime"
+            app:layout_constraintTop_toTopOf="@+id/imgCook"
+            app:srcCompat="@drawable/ic_cook_time" />
+
+        <TextView
+            android:id="@+id/txtDetailLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="난이도 "
+            android:layout_marginLeft="14dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgLevel"
+            app:layout_constraintStart_toEndOf="@id/imgLevel"
+            app:layout_constraintTop_toTopOf="@+id/imgLevel" />
+
+        <TextView
+            android:id="@+id/txtDetailLevelTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="하"
+            android:textColor="@color/colorBlack"
+            android:textFontWeight="700"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDetailLevel"
+            app:layout_constraintStart_toEndOf="@id/txtDetailLevel"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailLevel" />
+
+        <TextView
+            android:id="@+id/txtDetailCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수량"
+            android:layout_marginTop="56dp"
+            android:textColor="@color/colorBlack"
+            android:textFontWeight="600"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/imgCook"
+            app:layout_constraintEnd_toStartOf="@id/txtDetailCount2"
+            app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/txtDetailCount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="을 입력하세요"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDetailCount"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/txtDetailCount"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailCount" />
+
+        <ImageView
+            android:id="@+id/imgCountLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_count_left"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/txtDetailCount"
+            app:layout_constraintEnd_toStartOf="@id/txtDetailCountChange"/>
+
+        <TextView
+            android:id="@+id/txtDetailCountChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/colorBlack"
+            android:textFontWeight="800"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCountLeft"
+            app:layout_constraintEnd_toStartOf="@id/imgCountRight"
+            app:layout_constraintStart_toEndOf="@id/imgCountLeft"
+            app:layout_constraintTop_toTopOf="@+id/imgCountLeft" />
+
+        <ImageView
+            android:id="@+id/imgCountRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/txtDetailCountChange"
+            app:layout_constraintTop_toTopOf="@+id/imgCountLeft"
+            app:srcCompat="@drawable/ic_count_right" />
+
+        <ImageView
+            android:id="@+id/imgLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toStartOf="@id/txtDetailCart"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/imgCountLeft"
+            app:srcCompat="@drawable/ic_like" />
+
+        <TextView
+            android:id="@+id/txtDetailCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="장바구니"
+            android:textColor="@color/colorWhite"
+            android:textFontWeight="500"
+            android:textSize="19sp"
+            android:paddingVertical="9dp"
+            android:paddingHorizontal="86dp"
+            android:background="@drawable/btn_background_round20"
+            app:layout_constraintTop_toTopOf="@id/imgLike"
+            app:layout_constraintStart_toEndOf="@+id/imgLike"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"/>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="34dp"
+            android:background="@color/colorGrey05"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/imgLike"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
