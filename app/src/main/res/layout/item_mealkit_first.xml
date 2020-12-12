@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="mealKit"
+            type="com.nhgirls.pockit.data.Mealkit" />
 
     </data>
 
@@ -11,7 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
-        android:paddingBottom="12dp">
+        android:paddingBottom="12dp"
+        android:background="@color/colorWhite"
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:id="@+id/image"
@@ -20,7 +25,8 @@
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:glideImage="@{mealKit.image}"/>
 
         <TextView
             android:textSize="12sp"
@@ -33,6 +39,7 @@
             android:textColor="#3c3c3c"
             app:layout_constraintStart_toStartOf="@id/image"
             app:layout_constraintTop_toBottomOf="@id/image"
+            android:text="@{mealKit.name}"
             tools:text="저렴한 샐러드"
             android:textFontWeight="700" />
 
@@ -47,10 +54,12 @@
             android:textColor="#959595"
             app:layout_constraintStart_toStartOf="@id/title"
             app:layout_constraintTop_toBottomOf="@id/title"
-            tools:text="13,300" />
+            tools:text="13,300"
+            android:text="@{@string/price(mealKit.price)}"/>
 
 
         <CheckBox
+            android:checked="@{mealKit.ifLike}"
             android:id="@+id/like"
             android:layout_width="13dp"
             android:layout_height="19dp"
@@ -71,7 +80,8 @@
             android:lineSpacingExtra="1sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/like"
-            tools:text="4,231명이 찜했어요" />
+            tools:text="4,231명이 찜했어요"
+            android:text="@{@string/suffix_like(mealKit.like)}"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
