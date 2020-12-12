@@ -1,4 +1,4 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.forest
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
