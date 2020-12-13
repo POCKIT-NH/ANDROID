@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.tabs.TabLayout
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.common.HorizontalItemDecorator
-import com.nhgirls.pockit.data.response.TodayPrice
+import com.nhgirls.pockit.data.response.TodayPriceResponse
 import kotlinx.android.synthetic.main.fragment_home.*
 
 private const val ARG_PARAM1 = "param1"
@@ -19,9 +18,9 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
 
     private var mock = listOf(
-        TodayPrice("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","장어",1000, 86),
-        TodayPrice("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","월계수잎",1000, 86),
-        TodayPrice("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","보쌈",1000, 86)
+        TodayPriceResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","장어",1000, 86),
+        TodayPriceResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","월계수잎",1000, 86),
+        TodayPriceResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","보쌈",1000, 86)
     )
 
     private lateinit var todayPockitAdapter: TodayPockitRecyclerAdapter
