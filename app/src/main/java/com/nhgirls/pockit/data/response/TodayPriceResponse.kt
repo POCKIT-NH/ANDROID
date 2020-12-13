@@ -1,8 +1,9 @@
 package com.nhgirls.pockit.data.response
 
 data class TodayPriceResponse(
-    val imageUrl: String,
+    val idx : Int,
     val title: String,
-    val price: Int,
-    val like: Int
+    val product_img: String,
+    val category: Int? = 0,
+    val price: Int
 )

@@ -6,20 +6,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.nhgirls.pockit.PockitApplication
 import com.nhgirls.pockit.PockitApplication.Companion.GlobalApp
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.common.GlideApp
 import com.nhgirls.pockit.common.setOnDebounceClickListener
-import com.nhgirls.pockit.data.response.TodayPriceResponse
+import com.nhgirls.pockit.data.response.TodayPockitResponse
 import com.nhgirls.pockit.ui.detail.KitDetailActivity
 import com.nhgirls.pockit.utils.inflate
 
 class TodayPockitRecyclerAdapter : RecyclerView.Adapter<TodayPockitRecyclerAdapter.ViewHolder>(){
 
-    private var data: List<TodayPriceResponse> = emptyList()
+    private var data: List<TodayPockitResponse> = emptyList()
 
-    fun initData(data: List<TodayPriceResponse>){
+    fun initData(data: List<TodayPockitResponse>){
         this.data = data
         notifyDataSetChanged()
     }
@@ -41,7 +40,7 @@ class TodayPockitRecyclerAdapter : RecyclerView.Adapter<TodayPockitRecyclerAdapt
         private val txtTodayPockitPrice : TextView = itemView.findViewById(R.id.txtTodayPockitPrice)
         private val txtTodayPockitLike : TextView = itemView.findViewById(R.id.txtTodayPockitLike)
 
-        fun bind(item: TodayPriceResponse){
+        fun bind(item: TodayPockitResponse){
             GlideApp.with(itemView).load(item.imageUrl).into(imgTodayPockit)
             txtTodayPockitName.text = item.title
             txtTodayPockitPrice.text = "${item.price}원"

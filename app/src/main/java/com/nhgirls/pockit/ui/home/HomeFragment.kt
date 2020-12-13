@@ -5,9 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.common.HorizontalItemDecorator
+import com.nhgirls.pockit.data.response.TodayPockitResponse
 import com.nhgirls.pockit.data.response.TodayPriceResponse
+import com.nhgirls.pockit.utils.fadeInWithVisible
+import com.nhgirls.pockit.utils.setInvisible
 import kotlinx.android.synthetic.main.fragment_home.*
 
 private const val ARG_PARAM1 = "param1"
@@ -17,10 +23,12 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val vm : HomeViewModel by viewModels()
+
     private var mock = listOf(
-        TodayPriceResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","장어",1000, 86),
-        TodayPriceResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","월계수잎",1000, 86),
-        TodayPriceResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","보쌈",1000, 86)
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","장어",1000, 86),
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","월계수잎",1000, 86),
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","보쌈",1000, 86)
     )
 
     private lateinit var todayPockitAdapter: TodayPockitRecyclerAdapter
@@ -44,8 +52,24 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initViewPager()
+        getTodayPriceList()
         initRecycler()
+        initObserve()
+    }
+
+    private fun getTodayPriceList(){
+        vm.getTodayPriceList()
+    }
+
+    private fun initObserve(){
+        vm.todayPriceList.observe(viewLifecycleOwner, Observer { data ->
+            if(data == null) {
+                Toast.makeText(context, "네트워크 에러 발생", Toast.LENGTH_SHORT).show()
+            } else {
+                rootHome.fadeInWithVisible(600)
+                initViewPager(data)
+            }
+        })
     }
 
     private fun initRecycler(){
@@ -57,8 +81,8 @@ class HomeFragment : Fragment() {
         todayPockitAdapter.initData(mock)
     }
 
-    private fun initViewPager(){
-        vpTodayPrice.adapter = HomeViewPagerAdapter()
+    private fun initViewPager(data: List<TodayPriceResponse>){
+        vpTodayPrice.adapter = HomeViewPagerAdapter(data)
 
         vpTodayPrice.offscreenPageLimit = 3
         tlTodayPrice.setViewPager(vpTodayPrice)
