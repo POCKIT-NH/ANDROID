@@ -21,8 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.cart.CartActivity" android:exported="true"/>
+        <activity android:name=".ui.detail.KitDetailActivity" />
         <activity android:name=".ui.completeorder.CompleteOrderActivity" />
-        <activity android:name=".ui.detail.KitDetailActivity"/>
         <activity android:name=".ui.MainActivity"/>
     </application>
 

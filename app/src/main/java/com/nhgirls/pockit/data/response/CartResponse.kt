@@ -11,7 +11,7 @@ data class CartResponse (
     @SerializedName("delivery_date")
     val deliveryDate: String,
     @SerializedName("delivery_price")
-    val deliveryPrice: Int,
+    val deliveryCharge: Int,
     @SerializedName("product")
     val products: List<Cart>
 )
