@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.detail.KitDetailActivity"/>
+        <activity android:name=".ui.login.LoginActivity"></activity>
+        <activity android:name=".ui.detail.KitDetailActivity" />
         <activity android:name=".ui.CompleteOrderActivity" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity"
+    android:background="@drawable/bg_login">
+
+    <TextView
+        android:id="@+id/txtPockitNaming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pockit"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp"
+        android:layout_marginTop="190dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtLoginId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_background_stroke_round22"
+        android:hint="아이디를 입력하세요"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/txtPockitNaming" />
+
+    <EditText
+        android:id="@+id/edtLoginPw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_background_stroke_round22"
+        android:hint="비밀번호를 입력하세요"
+        android:inputType="textPassword"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="14sp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/edtLoginId" />
+
+    <TextView
+        android:id="@+id/txtLoginBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_background_round22"
+        android:text="로그인"
+        android:paddingVertical="16dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textFontWeight="600"
+        android:layout_marginTop="18dp"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/edtLoginPw" />
+
+    <ImageView
+        android:id="@+id/imgLoginAuto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check_login"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoginBtn" />
+
+    <TextView
+        android:id="@+id/txtLoginAuto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자동 로그인"
+        android:textColor="@color/colorWhite"
+        android:textFontWeight="600"
+        android:textSize="12sp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintTop_toTopOf="@id/imgLoginAuto"
+        app:layout_constraintBottom_toBottomOf="@id/imgLoginAuto"
+        app:layout_constraintStart_toEndOf="@+id/imgLoginAuto" />
+
+    <TextView
+        android:id="@+id/txtLoginSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아직 회원이 아니신가요? "
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtLoginSignUpBtn"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/imgLoginAuto"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <TextView
+        android:id="@+id/txtLoginSignUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtLoginSignUp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/txtLoginSignUp"
+        app:layout_constraintTop_toTopOf="@id/txtLoginSignUp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
