@@ -1,11 +1,11 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.categorydetail
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import java.lang.IndexOutOfBoundsException
 
-class MealkititemDecoration(private val spanCount: Int, private val spacing: Int) :
+class MealkitItemDecoration(private val spanCount: Int, private val spacing: Int) :
     RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(
