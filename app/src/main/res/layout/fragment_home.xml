@@ -23,6 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="다양한 밀키트를 검색해보세요!"
+        android:textFontWeight="600"
         android:textColorHint="@color/colorGrey06"
         android:textSize="14sp"
         android:paddingVertical="13dp"
@@ -52,7 +53,7 @@
         android:layout_marginTop="24dp"
         android:text="오늘의 특가"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textFontWeight="800"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/edtHomeSearch" />
@@ -86,7 +87,7 @@
         app:dotsColor="@color/colorGrey02"
         app:selectedDotColor="@color/colorPrimary"
         app:dotsCornerRadius="8dp"
-        app:dotsSize="8dp"
+        app:dotsSize="7dp"
         app:dotsSpacing="4dp"
         app:dotsWidthFactor="2.5"
         app:layout_constraintTop_toBottomOf="@id/vpTodayPrice"
@@ -101,7 +102,7 @@
         android:text="박경선님을 위한 오늘의 포킷"
         android:textFontWeight="800"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/tlTodayPrice" />
 
@@ -131,13 +132,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="36dp" />
+        app:layout_constraintGuide_begin="24dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="36dp" />
+        app:layout_constraintGuide_end="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

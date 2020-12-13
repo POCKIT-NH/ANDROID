@@ -30,7 +30,7 @@
             android:text="상품 이름"
             android:textFontWeight="600"
             android:textColor="@color/colorBlack"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgTodayKit" />
 
@@ -51,14 +51,14 @@
                 android:layout_height="wrap_content"
                 android:text="상품 가격"
                 android:textColor="@color/colorGrey05"
-                android:textSize="14sp"
+                android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view"
                 android:layout_width="0dp"
-                android:layout_height="1dp"
+                android:layout_height="0.5dp"
                 android:background="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/txtKitPrice"
@@ -75,15 +75,15 @@
             android:text="특가"
             android:textColor="@color/colorPrimary"
             android:textFontWeight="600"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@id/clTodayPrice"
             app:layout_constraintStart_toEndOf="@+id/clTodayPrice"
             app:layout_constraintTop_toTopOf="@+id/clTodayPrice" />
 
         <ImageView
             android:id="@+id/imgTodayPriceLike"
-            android:layout_width="18dp"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/sl_like"
             app:layout_constraintBottom_toBottomOf="@+id/txtSalePrice"
             app:layout_constraintEnd_toEndOf="@id/imgTodayKit" />
