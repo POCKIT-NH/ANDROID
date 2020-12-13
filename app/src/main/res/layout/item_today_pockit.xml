@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/green_background_round">
+
+    <TextView
+        android:id="@+id/txtTodayPockitLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="89명이 포크로 찜했어요."
+        android:textColor="@color/colorWhite"
+        android:textSize="10sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTodayPockitName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="부대찌개"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        android:textFontWeight="600"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/txtTodayPockitLike"
+        app:layout_constraintTop_toBottomOf="@+id/txtTodayPockitLike" />
+
+    <TextView
+        android:id="@+id/txtTodayPockitPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="24dp"
+        android:text="12,000원"
+        android:textColor="@color/colorWhite"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtTodayPockitName"
+        app:layout_constraintTop_toBottomOf="@+id/txtTodayPockitName" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTodayPockitImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/white_background_round19"
+        android:layout_marginVertical="12dp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <ImageView
+            android:id="@+id/imgTodayKit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

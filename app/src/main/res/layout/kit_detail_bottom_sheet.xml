@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="100dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:background="@drawable/white_background_round10"
+    android:elevation="25dp">
+
+    <View
+        android:id="@+id/viewDetailBar"
+        android:layout_width="60dp"
+        android:layout_height="6dp"
+        android:background="@drawable/grey_round15"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlKitDetail"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginVertical="24dp"
+        app:tabGravity="center"
+        app:tabIndicatorFullWidth="false"
+        app:tabTextAppearance="@style/TextAppearance.KitDetailTab"
+        app:layout_constraintTop_toBottomOf="@id/viewDetailBar"
+        app:tabTextColor="@color/colorBlack"
+        app:tabIndicatorColor="@color/colorBlack"
+        app:tabIndicatorHeight="1dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="상품 정보" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="작물 정보"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="조리법"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="리뷰"/>
+
+    </com.google.android.material.tabs.TabLayout>
+    
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpKitDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tlKitDetail"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
