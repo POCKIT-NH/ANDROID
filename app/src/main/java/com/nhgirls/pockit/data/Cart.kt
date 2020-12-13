@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class Cart(
     @SerializedName("idx")
     val id: Int,
-    @SerializedName("product_name")
+    @SerializedName("product_img")
     val image: String,
     @SerializedName("title")
     val name: String,

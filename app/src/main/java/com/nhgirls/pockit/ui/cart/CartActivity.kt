@@ -1,24 +1,19 @@
 package com.nhgirls.pockit.ui.cart
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.nhgirls.pockit.R
-import com.nhgirls.pockit.databinding.FragmentCartBinding
+import com.nhgirls.pockit.databinding.ActivityCartBinding
 
-
-class CartFragment : Fragment() {
+class CartActivity : AppCompatActivity() {
     private val viewModel: CartViewModel by viewModels()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val binding = FragmentCartBinding.inflate(inflater, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val binding: ActivityCartBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_cart)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
@@ -46,21 +41,19 @@ class CartFragment : Fragment() {
 
         binding.cartList.adapter = cartAdapter
         binding.selectAll.setOnClickListener {
-                viewModel.checkAll(binding.selectAll.isChecked)
-                viewModel.calculateTotalPrice()
+            viewModel.checkAll(binding.selectAll.isChecked)
+            viewModel.calculateTotalPrice()
         }
 
-
         subscribeUi(binding, cartAdapter)
-        return binding.root
     }
 
-    private fun subscribeUi(binding: FragmentCartBinding, cartAdapter: CartAdapter) {
-        viewModel.cartList.observe(viewLifecycleOwner, Observer {
+    private fun subscribeUi(binding: ActivityCartBinding, cartAdapter: CartAdapter) {
+        viewModel.cartList.observe(this, Observer {
             cartAdapter.submitList(it)
         })
 
-        viewModel.ifAllChecked.observe(viewLifecycleOwner, Observer {
+        viewModel.ifAllChecked.observe(this, Observer {
             binding.selectAll.isChecked = it
         })
     }
