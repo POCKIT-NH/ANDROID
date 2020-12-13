@@ -1,4 +1,4 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.categorydetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,9 +23,9 @@ class CategoryDetailFragment : Fragment() {
         val mealkitAdapter = MealkitAdapter(MealkitAdapter.OnClickListener {
             // todo 리사이클러뷰 아이템 클릭시 클릭 이벤트 처리하기
         })
-        view.mealkit_list.adapter = mealkitAdapter
-        view.mealkit_list.addItemDecoration(
-            MealkititemDecoration(
+        view.cart_list.adapter = mealkitAdapter
+        view.cart_list.addItemDecoration(
+            MealkitItemDecoration(
                 MEALKIT_LIST_SPANCOUNT,
                 MEALKIT_LIST_SPACING
             )

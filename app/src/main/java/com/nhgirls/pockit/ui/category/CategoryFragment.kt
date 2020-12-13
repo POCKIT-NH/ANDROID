@@ -1,4 +1,4 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.category
 
 import android.os.Bundle
 import android.view.LayoutInflater

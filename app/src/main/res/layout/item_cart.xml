@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cart"
+            type="com.nhgirls.pockit.data.Cart" />
+
+        <variable
+            name="onClick"
+            type="com.nhgirls.pockit.ui.cart.CartAdapter.OnClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@color/colorWhite"
+        android:paddingBottom="16dp"
+        android:onClick="@{(view) -> onClick.onClick(view, cart)}">
+
+        <CheckBox
+            android:id="@+id/check"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sl_check"
+            android:buttonTint="@android:color/transparent"
+            android:checked="@={cart.checked}"
+            android:onClick="@{(view) -> onClick.onClick(view, cart)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="20dp"
+            app:glideImageString="@{cart.image}"
+            app:layout_constraintStart_toEndOf="@id/check"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/dummy_mealkit_2" />
+
+        <TextView
+            android:id="@+id/mealkit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12sp"
+            android:layout_marginTop="23dp"
+            android:lineSpacingExtra="4.2sp"
+            android:text="@{cart.name}"
+            android:textColor="#3c3c3c"
+            android:textFontWeight="700"
+            android:textSize="14.5sp"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_count_left"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="23dp"
+            android:onClick="@{(view) -> onClick.onClick(view, cart)}"
+            android:src="@drawable/ic_count_left"
+            app:layout_constraintStart_toStartOf="@id/mealkit_name"
+            app:layout_constraintTop_toBottomOf="@id/mealkit_name" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:lineSpacingExtra="4.8sp"
+            android:text="@{Integer.toString(cart.count)}"
+            android:textColor="#3c3c3c"
+            android:textFontWeight="700"
+            android:textSize="16.5sp"
+            app:layout_constraintBottom_toBottomOf="@id/icon_count_left"
+            app:layout_constraintStart_toEndOf="@id/icon_count_left"
+            app:layout_constraintTop_toTopOf="@id/icon_count_left"
+            tools:text="1" />
+
+        <ImageView
+            android:id="@+id/icon_count_right"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="17dp"
+            android:onClick="@{(view) -> onClick.onClick(view, cart)}"
+            android:src="@drawable/ic_count_right"
+            app:layout_constraintBottom_toBottomOf="@id/icon_count_left"
+            app:layout_constraintStart_toEndOf="@id/count"
+            app:layout_constraintTop_toTopOf="@id/icon_count_left" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:lineSpacingExtra="3.6sp"
+            android:text="@{@string/price(cart.price * cart.count)}"
+            android:textColor="#3b3b3b"
+            android:textFontWeight="700"
+            android:textSize="12.5sp"
+            app:layout_constraintEnd_toEndOf="@id/ex"
+            app:layout_constraintTop_toBottomOf="@id/ex"
+            tools:text="13,800원" />
+
+
+        <ImageButton
+            android:id="@+id/ex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="22dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{(view) -> onClick.onClick(view, cart)}"
+            android:src="@drawable/icon_ex"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

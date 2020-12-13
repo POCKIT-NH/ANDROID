@@ -1,4 +1,4 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.completeorder
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
