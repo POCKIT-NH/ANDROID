@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGrey01"
-    tools:context=".ui.CategoryFragment">
+    tools:context=".ui.category.CategoryFragment">
 
     <ImageView
         android:id="@+id/cart"
