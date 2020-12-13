@@ -23,4 +23,10 @@
         <item name="boxStrokeColor">@color/border_category_search</item>
     </style>
 
+    <style name="TextAppearance.KitDetailTab" parent="TextAppearance.Design.Tab">
+        <item name="fontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
 </resources>
