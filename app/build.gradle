@@ -68,4 +68,7 @@ dependencies {
 
     // fragment ktx
     implementation "androidx.fragment:fragment-ktx:1.2.5"
+
+    // indicator anim
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
 }
