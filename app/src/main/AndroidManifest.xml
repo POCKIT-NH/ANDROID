@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.detail.KitDetailActivity"/>
-        <activity android:name=".ui.CompleteOrderActivity" />
+        <activity android:name=".ui.completeorder.CompleteOrderActivity"></activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

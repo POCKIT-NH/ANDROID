@@ -1,7 +1,8 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.category
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.nhgirls.pockit.ui.categorydetail.CategoryDetailFragment
 
 const val KOREAN_MEAL_SET = 0
 const val KOREAN_SIDE_DISH = 1

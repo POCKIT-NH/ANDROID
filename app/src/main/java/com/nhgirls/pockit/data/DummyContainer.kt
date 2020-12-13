@@ -47,4 +47,19 @@ object DummyContainer {
             231
         )
     )
+
+    fun getDummyCarts() = listOf(
+        Cart(
+            "https://user-images.githubusercontent.com/57262833/101932237-daf2de80-3c1d-11eb-9773-67447208ccf6.png",
+        "전통 백반",
+            12300,
+            1
+        ),
+        Cart(
+            "https://thewiki.ewr1.vultrobjects.com/data/65787465726e616c2f3033332d3337342d323134312e706b743131342e636f6d2f313432333831323838345f3230303331315f312e6a7067.jpg",
+            "현대 백반",
+            10000,
+            1
+        )
+    )
 }

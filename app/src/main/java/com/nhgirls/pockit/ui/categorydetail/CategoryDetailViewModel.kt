@@ -1,4 +1,4 @@
-package com.nhgirls.pockit.ui
+package com.nhgirls.pockit.ui.categorydetail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

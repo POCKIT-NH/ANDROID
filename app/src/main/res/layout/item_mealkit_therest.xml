@@ -25,7 +25,7 @@
             android:layout_height="111dp"
             android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
-            app:glideImage="@{mealKit.image}"
+            app:glideImageRes="@{mealKit.image}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
