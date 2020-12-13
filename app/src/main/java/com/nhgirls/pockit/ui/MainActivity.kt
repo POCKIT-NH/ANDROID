@@ -7,6 +7,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.common.setOnDebounceClickListener
+import com.nhgirls.pockit.ui.category.CategoryFragment
+import com.nhgirls.pockit.ui.forest.ForestFragment
 import com.nhgirls.pockit.ui.home.HomeFragment
 import com.nhgirls.pockit.ui.story.StoryFragment
 import com.nhgirls.pockit.ui.user.UserFragment

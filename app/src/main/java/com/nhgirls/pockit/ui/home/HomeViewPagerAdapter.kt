@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.nhgirls.pockit.R
+import com.nhgirls.pockit.common.setOnDebounceClickListener
 import kotlinx.android.synthetic.main.item_today_price.view.*
 
 class HomeViewPagerAdapter : PagerAdapter() {
@@ -24,6 +25,7 @@ class HomeViewPagerAdapter : PagerAdapter() {
         view.txtKitName.text = mock[position].kitName
         view.txtKitPrice.text = mock[position].kitPrice
         view.txtSalePrice.text = mock[position].kitSalePrice
+
 
         container.addView(view)
 
