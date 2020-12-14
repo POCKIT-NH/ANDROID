@@ -16,4 +16,8 @@
         android:font="@font/nanum_gothic_bold"
         android:fontWeight="700" />
 
+    <font
+        android:font="@font/nanum_gothic_extra_bold"
+        android:fontWeight="900" />
+
 </font-family>
