@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.nhgirls.pockit.ui.pay.PayViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.pay.PayActivity"
+                android:paddingBottom="108dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="39dp"
+                    android:lineSpacingExtra="6.9sp"
+                    android:text="주문결제"
+                    android:textFontWeight="900"
+                    android:textSize="24sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/delivery_site_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="31dp"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:lineSpacingExtra="3.9sp"
+                    android:textColor="#3c3c3c"
+                    android:textSize="13.5sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/title"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    android:text="배송지 정보" />
+
+                <TextView
+                    android:id="@+id/customer_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:lineSpacingExtra="3.8sp"
+                    android:text="주문자"
+                    android:textColor="#424242"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/delivery_site_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/customer_layout"
+                    style="@style/Widget.Pay.Input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="21dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="@id/customer_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/customer_title"
+                    app:layout_constraintTop_toTopOf="@id/customer_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/customer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:textFontWeight="700"
+                        tools:text="박경선" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/phone_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:lineSpacingExtra="3.8sp"
+                    android:text="연락처"
+                    android:textColor="#424242"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="@id/customer_title"
+                    app:layout_constraintTop_toBottomOf="@id/customer_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_layout"
+                    style="@style/Widget.Pay.Input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="21dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="@id/phone_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/phone_title"
+                    app:layout_constraintTop_toTopOf="@id/phone_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:textFontWeight="700"
+                        tools:text="010-9944-4540" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/address_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:lineSpacingExtra="3.8sp"
+                    android:text="배송지"
+                    android:textColor="#424242"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="@id/phone_title"
+                    app:layout_constraintTop_toBottomOf="@id/phone_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/post_code_layout"
+                    style="@style/Widget.Pay.Input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="21dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="@id/address_title"
+                    app:layout_constraintEnd_toStartOf="@id/find_address"
+                    app:layout_constraintStart_toEndOf="@id/address_title"
+                    app:layout_constraintTop_toTopOf="@id/address_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/post_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:textFontWeight="700"
+                        tools:text="01026" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/address_layout"
+                    style="@style/Widget.Pay.Input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="@id/find_address"
+                    app:layout_constraintStart_toStartOf="@id/post_code_layout"
+                    app:layout_constraintTop_toBottomOf="@id/post_code_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:textFontWeight="700"
+                        tools:text="서울시 강북구 삼양로 131길" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/address_detail_layout"
+                    style="@style/Widget.Pay.Input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="@id/address_layout"
+                    app:layout_constraintStart_toStartOf="@id/address_layout"
+                    app:layout_constraintTop_toBottomOf="@id/address_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:textFontWeight="700"
+                        tools:text="하이빌 401호" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/find_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pay"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="10dp"
+                    android:paddingStart="12dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="주소 찾기"
+                    android:textFontWeight="700"
+                    app:backgroundTint="@null"
+                    app:layout_constraintBottom_toBottomOf="@id/post_code_layout"
+                    app:layout_constraintEnd_toEndOf="@id/phone_layout"
+                    app:layout_constraintHorizontal_bias="0.511"
+                    app:layout_constraintStart_toEndOf="@id/post_code_layout"
+                    app:layout_constraintTop_toTopOf="@id/post_code_layout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="5dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="기본 배송지로 저장합니다"
+                    android:textColor="#929292"
+                    android:textFontWeight="700"
+                    android:textSize="10.5sp"
+                    app:layout_constraintEnd_toStartOf="@id/check_default_address"
+                    app:layout_constraintTop_toBottomOf="@id/address_detail_layout" />
+
+                <CheckBox
+                    android:id="@+id/check_default_address"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/sl_check"
+                    android:buttonTint="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="@id/address_detail_layout"
+                    app:layout_constraintTop_toBottomOf="@id/address_detail_layout" />
+
+
+                <TextView
+                    android:id="@+id/memo_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="184dp"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:lineSpacingExtra="3.8sp"
+                    android:text="메모"
+                    android:textColor="#424242"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="@id/address_title"
+                    app:layout_constraintTop_toBottomOf="@id/address_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/memo_layout"
+                    style="@style/Widget.Pay.Input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="@id/memo_title"
+                    app:layout_constraintEnd_toEndOf="@id/check_default_address"
+                    app:layout_constraintStart_toEndOf="@id/memo_title"
+                    app:layout_constraintTop_toTopOf="@id/memo_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/memo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="배송 시 요청사항을 적어주세요"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:textColorHint="#8c8c8c" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/payment_mean_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="39dp"
+                    android:lineSpacingExtra="6.9sp"
+                    android:text="결제 정보"
+                    android:textFontWeight="900"
+                    android:textSize="24sp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="@id/title"
+                    app:layout_constraintTop_toBottomOf="@id/memo_title"
+                    app:layout_goneMarginTop="54dp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:id="@+id/cardList"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintDimensionRatio="1:0.4027"
+                    app:layout_constraintTop_toBottomOf="@id/payment_mean_title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/pay"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:lineSpacingExtra="6.8sp"
+            android:text="@{@string/pay_button(viewModel.totalPrice)}"
+            android:textColor="@color/colorWhite"
+            android:textFontWeight="700"
+            android:textSize="23.5sp"
+            app:backgroundTint="@null"
+            android:gravity="center"
+            tools:text="38,600원 결제하기" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

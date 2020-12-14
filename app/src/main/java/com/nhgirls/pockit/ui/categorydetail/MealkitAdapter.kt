@@ -45,7 +45,7 @@ class MealkitAdapter(private val onClickListener: OnClickListener) :
         }
     }
 
-    class OnClickListener(private val clickListener: (artist: Mealkit) -> Unit) {
-        fun onClick(artist: Mealkit) = clickListener(artist)
+    class OnClickListener(private val clickListener: (mealKit: Mealkit) -> Unit) {
+        fun onClick(mealKit: Mealkit) = clickListener(mealKit)
     }
 }

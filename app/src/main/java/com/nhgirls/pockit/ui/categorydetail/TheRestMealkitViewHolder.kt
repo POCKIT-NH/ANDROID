@@ -10,11 +10,12 @@ import org.jetbrains.annotations.NotNull
 
 class TheRestMealkitViewHolder private constructor(private val binding: @NotNull ItemMealkitTherestBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(mealKit: Mealkit, onClickListener: MealkitAdapter.OnClickListener){
+    fun bind(mealKit: Mealkit, onClickListener: MealkitAdapter.OnClickListener) {
         binding.mealKit = mealKit
+        binding.onClickListener = onClickListener
     }
 
-    companion object{
+    companion object {
         private const val CORNER_RADIUS = 9.5f
         private const val IMAGE_CORNER_RADIUS = 9.0f
         fun from(viewGroup: ViewGroup): TheRestMealkitViewHolder {
@@ -26,6 +27,7 @@ class TheRestMealkitViewHolder private constructor(private val binding: @NotNull
             giveCornerRadius(binding)
             return TheRestMealkitViewHolder(binding)
         }
+
         private fun giveCornerRadius(binding: ItemMealkitTherestBinding) {
             binding.root.setRound(CORNER_RADIUS)
             binding.image.setRound(IMAGE_CORNER_RADIUS)
