@@ -28,9 +28,9 @@ class HomeFragment : Fragment() {
     private val vm : HomeViewModel by viewModels()
 
     private var mock = listOf(
-        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","장어",1000, 86),
-        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","월계수잎",1000, 86),
-        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","보쌈",1000, 86)
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","부추전과 김치찌개",12000, 86),
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","새우튀김과 우동",13000, 26),
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","볶음짬뽕",8900, 12)
     )
 
     private lateinit var todayPockitAdapter: TodayPockitRecyclerAdapter

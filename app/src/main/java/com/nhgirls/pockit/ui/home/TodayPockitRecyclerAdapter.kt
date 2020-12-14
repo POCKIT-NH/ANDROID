@@ -41,7 +41,7 @@ class TodayPockitRecyclerAdapter : RecyclerView.Adapter<TodayPockitRecyclerAdapt
         private val txtTodayPockitLike : TextView = itemView.findViewById(R.id.txtTodayPockitLike)
 
         fun bind(item: TodayPockitResponse){
-            GlideApp.with(itemView).load(item.imageUrl).into(imgTodayPockit)
+//            GlideApp.with(itemView).load(item.imageUrl).into(imgTodayPockit)
             txtTodayPockitName.text = item.title
             txtTodayPockitPrice.text = "${item.price}원"
             txtTodayPockitLike.text = "${item.like}명이 포크로 찜했어요"
