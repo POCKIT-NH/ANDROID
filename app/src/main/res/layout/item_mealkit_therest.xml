@@ -9,15 +9,19 @@
             name="mealKit"
             type="com.nhgirls.pockit.data.Mealkit" />
 
+        <variable
+            name="onClickListener"
+            type="com.nhgirls.pockit.ui.categorydetail.MealkitAdapter.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:background="@color/colorWhite"
+        android:onClick="@{() -> onClickListener.onClick(mealKit)}"
         android:paddingHorizontal="10dp"
-        android:paddingBottom="12dp"
-        android:layout_marginBottom="10dp">
+        android:paddingBottom="12dp">
 
         <ImageView
             android:id="@+id/image"
