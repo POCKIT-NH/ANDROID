@@ -13,9 +13,9 @@ import kotlinx.android.synthetic.main.fragment_story.*
 class StoryDetailActivity : AppCompatActivity() {
 
     private var mock = listOf(
-        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","장어",1000, 86),
-        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","월계수잎",1000, 86),
-        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","보쌈",1000, 86)
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","단호박 크림 파스타",12000, 86),
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","단호박 해물 찜",13200, 45),
+        TodayPockitResponse("https://sopt-server-27.s3.ap-northeast-2.amazonaws.com/4.jpg","단호박 전",9500, 21)
     )
 
     private lateinit var todayPockitAdapter: TodayPockitRecyclerAdapter

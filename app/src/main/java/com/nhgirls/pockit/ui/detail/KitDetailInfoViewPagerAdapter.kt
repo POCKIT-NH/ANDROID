@@ -10,10 +10,10 @@ import kotlinx.android.synthetic.main.item_kit_detail.view.*
 class KitDetailInfoViewPagerAdapter: PagerAdapter(){
 
     private val mock = listOf(
-        R.drawable.dummy_mealkit_1,
-        R.drawable.dummy_mealkit_2,
-        R.drawable.dummy_mealkit_3,
-        R.drawable.dummy_mealkit_4
+        R.drawable.d,
+        R.drawable.dd,
+        R.drawable.ddd,
+        R.drawable.dddd
     )
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {

@@ -60,6 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
+            android:padding="5dp"
+            android:src="@drawable/img_kit_dummy"
             android:scaleType="centerCrop"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
