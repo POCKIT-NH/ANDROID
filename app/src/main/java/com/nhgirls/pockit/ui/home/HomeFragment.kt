@@ -12,8 +12,10 @@ import com.nhgirls.pockit.R
 import com.nhgirls.pockit.common.HorizontalItemDecorator
 import com.nhgirls.pockit.data.response.TodayPockitResponse
 import com.nhgirls.pockit.data.response.TodayPriceResponse
+import com.nhgirls.pockit.ui.cart.CartActivity
 import com.nhgirls.pockit.utils.fadeInWithVisible
 import com.nhgirls.pockit.utils.setInvisible
+import com.nhgirls.pockit.utils.startActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 private const val ARG_PARAM1 = "param1"
@@ -55,6 +57,11 @@ class HomeFragment : Fragment() {
         getTodayPriceList()
         initRecycler()
         initObserve()
+        setImgShoppingCartListener()
+    }
+
+    private fun setImgShoppingCartListener(){
+        imgShoppingCart.setOnClickListener  {this.startActivity(CartActivity::class) }
     }
 
     private fun getTodayPriceList(){
