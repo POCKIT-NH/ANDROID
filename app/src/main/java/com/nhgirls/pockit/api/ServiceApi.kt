@@ -8,4 +8,7 @@ import retrofit2.http.GET
 interface ServiceApi {
     @GET("/cart")
     fun getCarts(): Call<Response<CartResponse>>
+
+    @GET("/forest")
+    fun getForest(): Call<Response<Int>>
 }
