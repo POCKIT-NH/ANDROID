@@ -7,7 +7,7 @@ import com.nhgirls.pockit.api.Service
 import com.nhgirls.pockit.utils.safeEnqueue
 
 class ForestViewModel : ViewModel() {
-    private val _forestPercent = MutableLiveData<Int>()
+    private val _forestPercent = MutableLiveData(0)
     val forestPercent: LiveData<Int>
         get() = _forestPercent
 
