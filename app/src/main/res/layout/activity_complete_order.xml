@@ -1,267 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f4f4f4"
-    tools:context=".ui.completeorder.CompleteOrderActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/bill_background"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="23dp"
-        android:layout_marginTop="54dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/bill_img_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.nhgirls.pockit.ui.completeorder.CompleteOrderViewModel" />
+    </data>
 
-    <ImageView
-        android:id="@+id/main_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:src="@drawable/ic_complete_pockit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/bill_background" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f4f4"
+        tools:context=".ui.completeorder.CompleteOrderActivity">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:lineSpacingExtra="6.9sp"
-        android:text="주문이 완료되었습니다."
-        android:textColor="#202020"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@id/main_icon"
-        app:layout_constraintStart_toStartOf="@id/main_icon"
-        app:layout_constraintTop_toBottomOf="@id/main_icon" />
+        <ImageView
+            android:id="@+id/bill_background"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="23dp"
+            android:layout_marginTop="54dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bill_img_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/divider_firest"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginHorizontal="37dp"
-        android:layout_marginTop="42dp"
-        android:background="#eeeeee"
-        app:layout_constraintEnd_toEndOf="@id/bill_background"
-        app:layout_constraintStart_toStartOf="@id/bill_background"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        <ImageView
+            android:id="@+id/main_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/ic_complete_pockit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bill_background" />
 
-    <TextView
-        android:id="@+id/order_detail_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:lineSpacingExtra="4sp"
-        android:text="주문 내역"
-        android:textColor="#202020"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/divider_firest"
-        app:layout_constraintTop_toBottomOf="@id/divider_firest" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:lineSpacingExtra="6.9sp"
+            android:text="주문이 완료되었습니다."
+            android:textColor="#202020"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@id/main_icon"
+            app:layout_constraintStart_toStartOf="@id/main_icon"
+            app:layout_constraintTop_toBottomOf="@id/main_icon" />
 
-    <TextView
-        android:id="@+id/order_number_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:gravity="end"
-        android:lineSpacingExtra="4sp"
-        android:text="주문 번호"
-        android:textColor="#959595"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/order_detail_title"
-        app:layout_constraintTop_toBottomOf="@id/order_detail_title" />
+        <View
+            android:id="@+id/divider_firest"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="37dp"
+            android:layout_marginTop="42dp"
+            android:background="#eeeeee"
+            app:layout_constraintEnd_toEndOf="@id/bill_background"
+            app:layout_constraintStart_toStartOf="@id/bill_background"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <TextView
-        android:id="@+id/order_maker_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:gravity="end"
-        android:lineSpacingExtra="4sp"
-        android:text="주문자"
-        android:textColor="#959595"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@id/order_number_title"
-        app:layout_constraintTop_toBottomOf="@id/order_number_title" />
+        <TextView
+            android:id="@+id/order_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="4sp"
+            android:text="주문 내역"
+            android:textColor="#202020"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/divider_firest"
+            app:layout_constraintTop_toBottomOf="@id/divider_firest" />
 
-    <TextView
-        android:id="@+id/order_date_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:gravity="end"
-        android:lineSpacingExtra="4sp"
-        android:text="주문 날짜"
-        android:textColor="#959595"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@id/order_maker_title"
-        app:layout_constraintTop_toBottomOf="@id/order_maker_title" />
+        <TextView
+            android:id="@+id/order_number_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:gravity="end"
+            android:lineSpacingExtra="4sp"
+            android:text="주문 번호"
+            android:textColor="#959595"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/order_detail_title"
+            app:layout_constraintTop_toBottomOf="@id/order_detail_title" />
 
-    <TextView
-        android:id="@+id/order_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:lineSpacingExtra="4sp"
-        android:textColor="#565656"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@id/bill_background"
-        app:layout_constraintTop_toTopOf="@id/order_number_title"
-        tools:text="34562119-1432456" />
+        <TextView
+            android:id="@+id/order_maker_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="end"
+            android:lineSpacingExtra="4sp"
+            android:text="주문자"
+            android:textColor="#959595"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@id/order_number_title"
+            app:layout_constraintTop_toBottomOf="@id/order_number_title" />
 
-    <TextView
-        android:id="@+id/order_maker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:lineSpacingExtra="4sp"
-        android:textColor="#565656"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@id/order_number"
-        app:layout_constraintTop_toBottomOf="@id/order_number"
-        tools:text="양혜선" />
+        <TextView
+            android:id="@+id/order_date_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="end"
+            android:lineSpacingExtra="4sp"
+            android:text="주문 날짜"
+            android:textColor="#959595"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@id/order_maker_title"
+            app:layout_constraintTop_toBottomOf="@id/order_maker_title" />
 
-    <TextView
-        android:id="@+id/order_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:lineSpacingExtra="4sp"
-        android:textColor="#565656"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@id/order_maker"
-        app:layout_constraintTop_toBottomOf="@id/order_maker"
-        tools:text="2020-12-12 08:12" />
+        <TextView
+            android:id="@+id/order_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="34dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#565656"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/bill_background"
+            app:layout_constraintTop_toTopOf="@id/order_number_title"
+            tools:text="34562119-1432456" />
 
-    <View
-        android:id="@+id/divider_second"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginHorizontal="37dp"
-        android:layout_marginTop="20dp"
-        android:background="#eeeeee"
-        app:layout_constraintEnd_toEndOf="@id/bill_background"
-        app:layout_constraintStart_toStartOf="@id/bill_background"
-        app:layout_constraintTop_toBottomOf="@id/order_date_title" />
+        <TextView
+            android:id="@+id/order_maker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#565656"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/order_number"
+            app:layout_constraintTop_toBottomOf="@id/order_number"
+            tools:text="양혜선" />
 
-    <TextView
-        android:id="@+id/payment_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:lineSpacingExtra="4sp"
-        android:text="결제 정보"
-        android:textColor="#202020"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/divider_second"
-        app:layout_constraintTop_toBottomOf="@id/divider_second" />
+        <TextView
+            android:id="@+id/order_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#565656"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/order_maker"
+            app:layout_constraintTop_toBottomOf="@id/order_maker"
+            tools:text="2020-12-12 08:12" />
 
-    <TextView
-        android:id="@+id/payment_mean_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:gravity="end"
-        android:lineSpacingExtra="4sp"
-        android:text="결제 방법"
-        android:textColor="#959595"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/payment_info"
-        app:layout_constraintTop_toBottomOf="@id/payment_info" />
+        <View
+            android:id="@+id/divider_second"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="37dp"
+            android:layout_marginTop="20dp"
+            android:background="#eeeeee"
+            app:layout_constraintEnd_toEndOf="@id/bill_background"
+            app:layout_constraintStart_toStartOf="@id/bill_background"
+            app:layout_constraintTop_toBottomOf="@id/order_date_title" />
 
-    <TextView
-        android:id="@+id/total_payment_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:gravity="end"
-        android:lineSpacingExtra="4sp"
-        android:text="총 결제 금액"
-        android:textColor="#959595"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@id/payment_mean_title"
-        app:layout_constraintTop_toBottomOf="@id/payment_mean_title" />
+        <TextView
+            android:id="@+id/payment_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="4sp"
+            android:text="결제 정보"
+            android:textColor="#202020"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/divider_second"
+            app:layout_constraintTop_toBottomOf="@id/divider_second" />
 
-    <TextView
-        android:id="@+id/payment_mean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:lineSpacingExtra="4sp"
-        android:textColor="#565656"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@id/bill_background"
-        app:layout_constraintTop_toTopOf="@id/payment_mean_title"
-        tools:text="농협 카드" />
+        <TextView
+            android:id="@+id/payment_mean_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:gravity="end"
+            android:lineSpacingExtra="4sp"
+            android:text="결제 방법"
+            android:textColor="#959595"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/payment_info"
+            app:layout_constraintTop_toBottomOf="@id/payment_info" />
 
-    <TextView
-        android:id="@+id/total_payment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:lineSpacingExtra="4sp"
-        android:textColor="@color/teal_blue"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@id/payment_mean"
-        app:layout_constraintTop_toBottomOf="@id/payment_mean"
-        tools:text="22,030원" />
+        <TextView
+            android:id="@+id/total_payment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="end"
+            android:lineSpacingExtra="4sp"
+            android:text="총 결제 금액"
+            android:textColor="#959595"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@id/payment_mean_title"
+            app:layout_constraintTop_toBottomOf="@id/payment_mean_title" />
 
-    <TextView
-        android:id="@+id/my_forest_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/nanum_gothic"
-        android:lineSpacingExtra="4sp"
-        android:text="나만의 포레스트가 한단계 성장했어요 !"
-        android:textColor="#565656"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@id/bill_background"
-        app:layout_constraintStart_toStartOf="@id/bill_background"
-        app:layout_constraintTop_toBottomOf="@id/bill_background" />
+        <TextView
+            android:id="@+id/payment_mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="34dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#565656"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/bill_background"
+            app:layout_constraintTop_toTopOf="@id/payment_mean_title"
+            android:text="농협 카드" />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginHorizontal="23dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/bg_confirm_button"
-        android:lineSpacingExtra="5.2sp"
-        android:text="확인"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_forest_description"
-        app:layout_constraintVertical_bias="0.6" />
+        <TextView
+            android:id="@+id/total_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:lineSpacingExtra="4sp"
+            android:text="@{@string/price(viewModel.totalPrice)}"
+            android:textColor="@color/teal_blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/payment_mean"
+            app:layout_constraintTop_toBottomOf="@id/payment_mean"
+            tools:text="22,030원" />
+
+        <TextView
+            android:id="@+id/my_forest_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:lineSpacingExtra="4sp"
+            android:text="나만의 포레스트가 한단계 성장했어요 !"
+            android:textColor="#565656"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/bill_background"
+            app:layout_constraintStart_toStartOf="@id/bill_background"
+            app:layout_constraintTop_toBottomOf="@id/bill_background" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginHorizontal="23dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_confirm_button"
+            android:lineSpacingExtra="5.2sp"
+            android:text="확인"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/my_forest_description"
+            app:layout_constraintVertical_bias="0.6" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

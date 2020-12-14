@@ -14,4 +14,5 @@
     <string name="fruit_title">과일</string>
     <string name="etc_title">기타</string>
     <string name="arrival_date">%d-%d(%s) 도착예정</string>
+    <string name="pay_button">%,d원 결제하기</string>
 </resources>

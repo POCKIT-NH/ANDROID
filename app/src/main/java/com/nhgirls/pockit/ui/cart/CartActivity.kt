@@ -1,5 +1,6 @@
 package com.nhgirls.pockit.ui.cart
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -7,13 +8,17 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.databinding.ActivityCartBinding
+import com.nhgirls.pockit.ui.pay.PayActivity
+import com.nhgirls.pockit.ui.pay.TOTAL_PRICE
 
 class CartActivity : AppCompatActivity() {
     private val viewModel: CartViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivityCartBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_cart)
+
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
@@ -45,8 +50,15 @@ class CartActivity : AppCompatActivity() {
             viewModel.calculateTotalPrice()
         }
 
+        binding.payCart.setOnClickListener {
+            val intent = Intent(this, PayActivity::class.java)
+            intent.putExtra(TOTAL_PRICE, viewModel.totalPrice.value)
+            startActivity(intent)
+            finish()
+        }
         subscribeUi(binding, cartAdapter)
     }
+
 
     private fun subscribeUi(binding: ActivityCartBinding, cartAdapter: CartAdapter) {
         viewModel.cartList.observe(this, Observer {
