@@ -1,10 +1,8 @@
 package com.nhgirls.pockit.api
 
 import com.nhgirls.pockit.data.requesst.LoginRequest
-import com.nhgirls.pockit.data.response.CartResponse
-import com.nhgirls.pockit.data.response.Response
-import com.nhgirls.pockit.data.response.TodayPockitResponse
-import com.nhgirls.pockit.data.response.TodayPriceResponse
+import com.nhgirls.pockit.data.requesst.NhPayRequest
+import com.nhgirls.pockit.data.response.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -21,11 +19,17 @@ interface ServiceApi {
      * 로그인
      */
     @POST("/user/login")
-    fun postLogin(@Body loginRequest: LoginRequest) : Call<Response<Unit>>
+    fun postLogin(@Body loginRequest: LoginRequest): Call<Response<Unit>>
 
     /**
      * 오늘의 특가
      */
     @GET("/home/today")
-    fun getTodayPrice() : Call<Response<List<TodayPriceResponse>>>
+    fun getTodayPrice(): Call<Response<List<TodayPriceResponse>>>
+
+    /**
+     * 간편 결제
+     */
+    @POST("/nhpay")
+    fun postNhPay(@Body nhPayRequest: NhPayRequest): Call<Response<NhPayResponse>>
 }
