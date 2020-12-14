@@ -1,6 +1,6 @@
 package com.nhgirls.pockit.data.response
 
-data class TodayPrice(
+data class TodayPockitResponse(
     val imageUrl: String,
     val title: String,
     val price: Int,

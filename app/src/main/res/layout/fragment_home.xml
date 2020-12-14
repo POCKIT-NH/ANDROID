@@ -15,7 +15,7 @@
         android:src="@drawable/shopping_cart"
         app:layout_constraintBottom_toBottomOf="@+id/edtHomeSearch"
         app:layout_constraintEnd_toStartOf="@id/edtHomeSearch"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/edtHomeSearch" />
 
     <EditText
@@ -33,7 +33,7 @@
         android:layout_marginLeft="11dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgShoppingCart"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
         android:background="@drawable/white_background_round7" />
 
     <ImageView
@@ -46,99 +46,132 @@
         app:layout_constraintEnd_toEndOf="@id/edtHomeSearch"
         app:layout_constraintTop_toTopOf="@+id/edtHomeSearch" />
 
-    <TextView
-        android:id="@+id/txtHomeTodayPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="오늘의 특가"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:textFontWeight="800"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/edtHomeSearch" />
-
-    <TextView
-        android:id="@+id/txtHomeTodayPriceExplain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="오늘만 이 가격! 신선한 재료를 놓치지 마세요"
-        android:textColor="@color/colorGrey03"
-        android:textSize="11sp"
-        android:textFontWeight="600"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/txtHomeTodayPrice" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vpTodayPrice"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtHomeTodayPriceExplain" />
-
-    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-        android:id="@+id/tlTodayPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:dotsColor="@color/colorGrey02"
-        app:selectedDotColor="@color/colorPrimary"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="5dp"
-        app:dotsSpacing="4dp"
-        app:dotsWidthFactor="2.5"
-        app:layout_constraintTop_toBottomOf="@id/vpTodayPrice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/txtHomeTodayPockit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="박경선님을 위한 오늘의 포킷"
-        android:textFontWeight="800"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/tlTodayPrice" />
-
-    <TextView
-        android:id="@+id/txtHomeTodayPockitExplain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="오늘은 날씨가 흐려요\n흐린날씨에 어울리는 제품을 추천해드릴게요"
-        android:textColor="@color/colorGrey03"
-        android:textSize="11sp"
-        android:textFontWeight="600"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/txtHomeTodayPockit" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTodayPockit"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_today_pockit"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/txtHomeTodayPockitExplain" />
+        app:layout_constraintTop_toBottomOf="@id/edtHomeSearch">
+
+        <TextView
+            android:id="@+id/txtHomeTodayPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="오늘의 특가"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textFontWeight="800"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtHomeTodayPriceExplain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="오늘만 이 가격! 신선한 재료를 놓치지 마세요"
+            android:textColor="@color/colorGrey03"
+            android:textSize="13sp"
+            android:textFontWeight="300"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/txtHomeTodayPrice" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpTodayPrice"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHomeTodayPriceExplain" />
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/tlTodayPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:dotsColor="@color/colorGrey02"
+            app:selectedDotColor="@color/colorPrimary"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="5dp"
+            app:dotsSpacing="4dp"
+            app:dotsWidthFactor="2.5"
+            app:layout_constraintTop_toBottomOf="@id/vpTodayPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtHomeTodayPockit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="박경선님을 위한 오늘의 포킷"
+            android:textFontWeight="800"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tlTodayPrice" />
+
+        <TextView
+            android:id="@+id/txtHomeTodayPockitExplain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="오늘은 날씨가 흐려요\n흐린날씨에 어울리는 제품을 추천해드릴게요"
+            android:textColor="@color/colorGrey03"
+            android:textSize="13sp"
+            android:textFontWeight="300"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/txtHomeTodayPockit" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTodayPockit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_today_pockit"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/txtHomeTodayPockitExplain" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imgLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loading_img"
+        app:layout_constraintBottom_toBottomOf="@+id/rootHome"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/rootHome"
+        android:visibility="gone"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="24dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

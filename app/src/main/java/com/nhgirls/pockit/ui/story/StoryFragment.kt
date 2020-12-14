@@ -6,21 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.nhgirls.pockit.R
+import com.nhgirls.pockit.common.HorizontalItemDecorator
+import com.nhgirls.pockit.data.StoryItem
+import kotlinx.android.synthetic.main.fragment_story.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [StoryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class StoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+
+    private val data = listOf(
+        StoryItem(R.drawable.pockit_story_1,"20-30대 청년 농부의","땀과 노력의 결실을 맺다","2020-12-12",3),
+        StoryItem(R.drawable.pockit_story_2,"게임 디자이너에서","미니 단호박 만렙 농부로 !","2020-12-12",3),
+        StoryItem(R.drawable.pockit_story_1,"20-30대 청년 농부의","땀과 노력의 결실을 맺다","2020-12-12",3)
+    )
+    private lateinit var storyRecyclerAdapter: StoryRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,16 +41,23 @@ class StoryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_story, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecycler()
+    }
+
+    private fun initRecycler(){
+        storyRecyclerAdapter = StoryRecyclerAdapter()
+
+        rvPockitStory.apply {
+            adapter =storyRecyclerAdapter
+            addItemDecoration(HorizontalItemDecorator(24))
+        }
+
+        storyRecyclerAdapter.initData(data)
+    }
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment StoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             StoryFragment().apply {
