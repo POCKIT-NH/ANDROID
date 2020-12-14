@@ -48,6 +48,7 @@ class TodayPockitRecyclerAdapter : RecyclerView.Adapter<TodayPockitRecyclerAdapt
 
             itemView.setOnDebounceClickListener {
                 Intent(GlobalApp,KitDetailActivity::class.java).apply {
+                    putExtra("idx",9)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }.run { GlobalApp.startActivity(this) }
             }

@@ -19,9 +19,9 @@ class StoryFragment : Fragment() {
 
 
     private val data = listOf(
-        StoryItem(R.drawable.pockit_story_1,"20-30대 청년 농부의","땀과 노력의 결실을 맺다","2020-12-12",3),
-        StoryItem(R.drawable.pockit_story_2,"게임 디자이너에서","미니 단호박 만렙 농부로 !","2020-12-12",3),
-        StoryItem(R.drawable.pockit_story_1,"20-30대 청년 농부의","땀과 노력의 결실을 맺다","2020-12-12",3)
+        StoryItem(R.drawable.pockit_story_1,"20-30대 청년 농부의","땀과 노력의 결실을 맺다","2020-12-12",6),
+        StoryItem(R.drawable.pockit_story_2,"게임 디자이너에서","미니 단호박 만렙 농부로 !","2020-12-13",3),
+        StoryItem(R.drawable.pockit_story_3,"강원도 영월의 기토","기똥찬 토마로 브랜딩","2020-12-13",9)
     )
     private lateinit var storyRecyclerAdapter: StoryRecyclerAdapter
 

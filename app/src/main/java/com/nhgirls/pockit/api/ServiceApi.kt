@@ -1,14 +1,12 @@
 package com.nhgirls.pockit.api
 
 import com.nhgirls.pockit.data.requesst.LoginRequest
-import com.nhgirls.pockit.data.response.CartResponse
-import com.nhgirls.pockit.data.response.Response
-import com.nhgirls.pockit.data.response.TodayPockitResponse
-import com.nhgirls.pockit.data.response.TodayPriceResponse
+import com.nhgirls.pockit.data.response.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ServiceApi {
     @GET("/cart")
@@ -25,4 +23,12 @@ interface ServiceApi {
      */
     @GET("/home/today")
     fun getTodayPrice() : Call<Response<List<TodayPriceResponse>>>
+
+    /**
+     * 제품 상세
+     */
+    @GET("/detail")
+    fun getPockitDetail(
+        @Query("idx") idx: Int
+    ) : Call<Response<PockitDetailResponse>>
 }
