@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.common.GlideApp
 import com.nhgirls.pockit.data.StoryItem
+import com.nhgirls.pockit.utils.dpToPx
 import com.nhgirls.pockit.utils.inflate
+import com.nhgirls.pockit.utils.setRound
 
 class StoryRecyclerAdapter : RecyclerView.Adapter<StoryRecyclerAdapter.ViewHolder>(){
 
@@ -40,6 +42,7 @@ class StoryRecyclerAdapter : RecyclerView.Adapter<StoryRecyclerAdapter.ViewHolde
 
         fun bind(item: StoryItem){
             GlideApp.with(itemView).load(item.img).into(imgStory)
+            imgStory.setRound(10.dpToPx().toFloat())
             txtStoryTitle.text = item.title
             txtStoryTitle2.text = item.title2
             txtStoryDate.text = item.date

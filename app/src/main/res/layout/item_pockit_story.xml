@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingVertical="24dp"
-    android:background="@drawable/white_background_round10"
-    android:elevation="20dp">
+    android:background="@drawable/white_background_round19"
+    android:elevation="1dp">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
@@ -25,7 +25,8 @@
     <ImageView
         android:id="@+id/imgStory"
         android:layout_width="0dp"
-        android:layout_height="351dp"
+        android:layout_height="374dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
