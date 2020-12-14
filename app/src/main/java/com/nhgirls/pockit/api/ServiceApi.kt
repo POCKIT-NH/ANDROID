@@ -1,6 +1,7 @@
 package com.nhgirls.pockit.api
 
 import com.nhgirls.pockit.data.requesst.LoginRequest
+import com.nhgirls.pockit.data.requesst.PutCart
 import com.nhgirls.pockit.data.response.*
 import retrofit2.Call
 import retrofit2.http.Body
@@ -31,4 +32,12 @@ interface ServiceApi {
     fun getPockitDetail(
         @Query("idx") idx: Int
     ) : Call<Response<PockitDetailResponse>>
+
+    /**
+     * 장바구니 담기
+     */
+    @POST("/cart")
+    fun postCart(
+        @Body putCart: PutCart
+    ) : Call<Response<Unit>>
 }

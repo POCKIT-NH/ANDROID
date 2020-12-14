@@ -12,6 +12,7 @@ import com.nhgirls.pockit.R
 import com.nhgirls.pockit.api.Service
 import com.nhgirls.pockit.common.GlideApp
 import com.nhgirls.pockit.common.setOnDebounceClickListener
+import com.nhgirls.pockit.data.requesst.PutCart
 import com.nhgirls.pockit.utils.safeEnqueue
 import kotlinx.android.synthetic.main.activity_kit_detail.*
 import kotlinx.android.synthetic.main.item_today_price.*
@@ -33,11 +34,21 @@ class KitDetailActivity : AppCompatActivity() {
         initDetail()
 
         txtDetailCart.setOnDebounceClickListener {
-            var toast = Toast(applicationContext)
-            toast.setGravity(Gravity.CENTER,0,0)
-            toast.duration = Toast.LENGTH_SHORT
-            toast.view = layoutInflater.inflate(R.layout.cart_toast,null)
-            toast.show()
+            api.postCart(PutCart(1,idx)).safeEnqueue(
+                onSuccess = {
+                    var toast = Toast(applicationContext)
+                    toast.setGravity(Gravity.CENTER,0,0)
+                    toast.duration = Toast.LENGTH_SHORT
+                    toast.view = layoutInflater.inflate(R.layout.cart_toast,null)
+                    toast.show()
+                },
+                onFailure = {
+
+                },
+                onError = {
+
+                }
+            )
         }
     }
 
