@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.cart.CartActivity" android:exported="true"/>
+        <activity android:name=".ui.password.PasswordActivity" android:exported="true"></activity>
+        <activity
+            android:name=".ui.pay.PayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.cart.CartActivity"
+            android:exported="true" />
         <activity android:name=".ui.detail.KitDetailActivity" />
         <activity android:name=".ui.completeorder.CompleteOrderActivity" />
         <activity android:name=".ui.MainActivity">
