@@ -19,7 +19,7 @@ class CartAdapter(private val onClickListener: OnClickListener) :
     }
     companion object DiffCallback : DiffUtil.ItemCallback<Cart>() {
         override fun areItemsTheSame(oldItem: Cart, newItem: Cart): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: Cart, newItem: Cart): Boolean {
