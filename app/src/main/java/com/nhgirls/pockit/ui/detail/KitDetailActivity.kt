@@ -64,7 +64,8 @@ class KitDetailActivity : AppCompatActivity() {
             onSuccess = {
                 GlideApp.with(this).load(it.data.product_img).into(imgDetailFood)
                 txtDetailTitle.text = it.data.title
-                txtDetailPrice.text = "${it.data.price}"
+
+                txtDetailPrice.text = "${it.data.price}원"
 
                 if(idx == 13){
                     txtAvg.text = "4.2"
