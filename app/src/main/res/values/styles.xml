@@ -22,6 +22,18 @@
         <item name="android:lineSpacingExtra">11sp</item>
         <item name="boxStrokeColor">@color/border_category_search</item>
     </style>
+    
+    <style name="Widget.Pay.Input" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="fontWeight">700</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#616161</item>
+        <item name="android:lineSpacingExtra">3.8sp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
 
     <style name="TextAppearance.KitDetailTab" parent="TextAppearance.Design.Tab">
         <item name="fontWeight">700</item>
