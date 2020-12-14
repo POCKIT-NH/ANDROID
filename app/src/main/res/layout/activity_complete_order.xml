@@ -129,7 +129,7 @@
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="@id/bill_background"
             app:layout_constraintTop_toTopOf="@id/order_number_title"
-            tools:text="34562119-1432456" />
+            android:text="34562119-1432456" />
 
         <TextView
             android:id="@+id/order_maker"
@@ -143,7 +143,7 @@
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="@id/order_number"
             app:layout_constraintTop_toBottomOf="@id/order_number"
-            tools:text="양혜선" />
+            android:text="벅경선" />
 
         <TextView
             android:id="@+id/order_date"
@@ -157,7 +157,7 @@
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="@id/order_maker"
             app:layout_constraintTop_toBottomOf="@id/order_maker"
-            tools:text="2020-12-12 08:12" />
+            android:text="2020-12-12 08:12" />
 
         <View
             android:id="@+id/divider_second"

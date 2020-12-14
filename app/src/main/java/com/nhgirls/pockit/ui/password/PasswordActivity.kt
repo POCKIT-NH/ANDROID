@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.Observer
 import com.nhgirls.pockit.R
 import com.nhgirls.pockit.generated.callback.OnClickListener
 import com.nhgirls.pockit.ui.completeorder.CompleteOrderActivity
@@ -31,10 +32,12 @@ class PasswordActivity : AppCompatActivity() {
         password_first.highlightColor = Color.WHITE
         password_first.requestFocus()
         this.hideKeyboard()
-        password_first.onFocusChangeListener = onFocusChangedListener
 
+        password_first.onFocusChangeListener = onFocusChangedListener
+        viewModel.setTotalPrice(this.intent.getIntExtra(TOTAL_PRICE, 0))
         initPinInput()
         initPasswordPad()
+        subscribeUi()
     }
 
     private fun initPinInput() {
@@ -114,17 +117,15 @@ class PasswordActivity : AppCompatActivity() {
                 if (it.toString() != "*") {
                     viewModel.savePassword(SIXTH_PASSWORD_INDEX, it.toString().toInt())
                 }
-
-                // todo 서버 통신 코드 작성하기
+                viewModel.postNhPay()
                 password_fifth.setText("*")
-                goCompleteOrderActivity()
             }
         }
     }
 
     private fun goCompleteOrderActivity() {
         val intent = Intent(this, CompleteOrderActivity::class.java)
-        intent.putExtra(TOTAL_PRICE, this.intent.getIntExtra(TOTAL_PRICE, 0))
+        intent.putExtra(TOTAL_PRICE, viewModel.getTotalPrice())
         startActivity(intent)
         finish()
     }
@@ -216,5 +217,13 @@ class PasswordActivity : AppCompatActivity() {
                 throw IllegalStateException("Pin 번호 입력 칸에 초점이 맞춰져 있어야 합니다.")
             }
         }
+    }
+
+    private fun subscribeUi() {
+        viewModel.goCompleteOrder.observe(this, Observer {
+            if (it) {
+                goCompleteOrderActivity()
+            }
+        })
     }
 }
